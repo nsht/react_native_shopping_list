@@ -7,7 +7,12 @@ const ListItem = props => {
     <TouchableOpacity style={styles.listItem}>
       <View style={styles.listItemView}>
         <Text style={styles.listItemText}>{props.item.text}</Text>
-        <Icon name="remove" size={20} color="firebrick" />
+        <Icon
+          name="remove"
+          size={20}
+          color="firebrick"
+          onPress={() => props.deleteItem(props.item.id)}
+        />
       </View>
     </TouchableOpacity>
   );
@@ -16,7 +21,7 @@ const ListItem = props => {
 const styles = StyleSheet.create({
   listItem: {
     padding: 15,
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#dfe4eb',
     borderBottomWidth: 1,
     borderColor: '#eee',
   },
